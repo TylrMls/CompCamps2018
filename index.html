@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8">
+    <title>Tyler's Week 2 Website</title>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("div.center").css("display", "none");
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $("div.center").slideDown(700);
+
+        $("a.transition").click(function(event){
+          event.preventDefault();
+          linkLocation = this.href;
+          if (linkLocation != window.location) {
+            $("div.center").slideUp(700, redirectPage);
+          }
+        });
+        function redirectPage() {
+          window.location = linkLocation;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="nav">
+      <ul>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="https://tylrmls.github.io/CompCamps2018" class="nav-link">Last Weeks Page</a></li>
+        <li class="nav-item"><a href="https://compcamps.com" class="nav-link">CompCamps</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
