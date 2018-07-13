@@ -1,9 +1,9 @@
-function AnimateRotate(angle) {
-    var $elem = $('#toggleButton');
+var $elem = $('#toggleButton');
 
-    if (!isOpen) {
+function AnimateRotate(angle) {
+    if (localStorage.getItem('keepTabOpen') == 'true') {
+      console.log("sub")
       $('.nav').animate({"margin-left": '-=100%'});
-      isOpen = false;
       $({deg: angle}).animate({deg: 0}, {
           duration: 500,
           step: function(now) {
@@ -12,8 +12,9 @@ function AnimateRotate(angle) {
               });
           }
       });
-      isOpen = true;
+      localStorage.setItem('keepTabOpen', 'false')
     } else {
+      console.log("add");
       $({deg: 0}).animate({deg: angle}, {
           duration: 500,
           step: function(now) {
@@ -23,25 +24,15 @@ function AnimateRotate(angle) {
           }
       });
       $('.nav').animate({"margin-left": '+=100%'});
-      isOpen = false;
+      localStorage.setItem('keepTabOpen', 'true')
     }
 }
-function KeepOpen() {
-  if (isOpen == true) {
-    localStorage.setItem('keepTabOpen', true);
-    console.log("1")
-  } else {
-    localStorage.setItem('keepTabOpen', false);
-    console.log("2");
-  }
-}
-var myElement = document.querySelector("#navigation");
-if (localStorage.getItem('keepTabOpen')) {
-  var isOpen = true;
-  $(".nav").css("margin-left","0")
-  console.log("1!");
+if (localStorage.getItem('keepTabOpen') === 'false') {
+  document.getElementById("navigation").style.marginLeft = "-100%";
+
 } else {
-  var isOpen = false;
-  $(selector).css("margin-left","-100%")
-  console.log("2!");
+  document.getElementById("navigation").style.marginLeft = "0";
+  $elem.css({
+      transform: 'rotate(45deg)'
+  });
 }
