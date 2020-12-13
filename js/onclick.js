@@ -3,7 +3,7 @@ var nav = document.querySelector('.nav');
 function AnimateRotate(angle) {
   var left_margin = window.getComputedStyle(nav).getPropertyValue("margin-left");
   if (left_margin == '-100%') {
-    console.log("add");
+    console.log(left_margin);
    $({deg: 0}).animate({deg: angle}, {
        duration: 500,
         step: function(now) {
