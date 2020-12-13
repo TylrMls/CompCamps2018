@@ -9,10 +9,11 @@ function AnimateRotate(angle) {
             });
        }
     });
-    document.getElementById("navigation").style.marginLeft = "-100%";
+    $('.nav').animate({"margin-left": '-=100%'});
+    document.getElementById("navigation").style.marginLeft = "0%";
   } else {
    $('.nav').animate({"margin-left": '+=100%'});
-   document.getElementById("navigation").style.marginLeft = "0";
+   document.getElementById("navigation").style.marginLeft = "-100%";
    $elem.css({
        transform: 'rotate(45deg)'
    });
