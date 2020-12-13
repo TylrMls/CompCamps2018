@@ -12,6 +12,7 @@ function AnimateRotate(angle) {
             });
        }
     });
+    document.getElementById("navigation").style.marginLeft = "-100%";
   } else {
    $('.nav').animate({"margin-left": '+=100%'});
    document.getElementById("navigation").style.marginLeft = "0";
