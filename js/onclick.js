@@ -1,6 +1,6 @@
 var $elem = $('#toggleButton');
 function AnimateRotate(angle) {
-  if (document.getElementById("navigation").style.marginLeft === "-100%";) {
+  if (document.getElementById("navigation").style.marginLeft === "-100%") {
     console.log(left_margin);
    $({deg: 0}).animate({deg: angle}, {
        duration: 500,
