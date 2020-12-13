@@ -14,8 +14,13 @@ function AnimateRotate(angle) {
   } else {
    $('.nav').animate({"margin-left": '-=100%'});
    document.getElementById("navigation").style.marginLeft = "-100%";
-   $elem.css({
-       transform: 'rotate(45deg)'
-   });
+   $({deg: angle}).animate({deg: 0}, {
+       duration: 500,
+        step: function(now) {
+           $elem.css({
+               transform: 'rotate(' + now + 'deg)'
+            });
+       }
+    });
   }
 }
